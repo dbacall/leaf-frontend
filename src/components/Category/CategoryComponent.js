@@ -35,7 +35,7 @@ const Category = ({ therapists = [], status, category }) => {
 
   return (
     <div className={styles.category}>
-      <h2 className={styles.title}>Therapiss</h2>
+      <h2 className={styles.title}>Therapists</h2>
       <div className={styles.therapists}>{renderTherapists()}</div>
     </div>
   );
