@@ -8,8 +8,6 @@ import { setCurrentUser, logoutUser } from './redux/actions/authActions';
 import './App.scss';
 import RouterConfig from './navigation/RouterConfig';
 import { PersistGate } from 'redux-persist/integration/react';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
 
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken;
@@ -26,13 +24,11 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render() {
     return (
-      <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <RouterConfig />
-          </PersistGate>
-        </Provider>
-      </MuiPickersUtilsProvider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <RouterConfig />
+        </PersistGate>
+      </Provider>
     );
   }
 }
