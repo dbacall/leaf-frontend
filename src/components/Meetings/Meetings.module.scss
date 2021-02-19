@@ -1,5 +1,6 @@
 div.meetings {
   padding-top: $padding;
+  overflow-x: auto;
 
   .title {
     text-align: center;
