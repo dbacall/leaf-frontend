@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Loader from '../commons/Loader';
 import { differenceInYears } from 'date-fns';
 import Meetings from '../Meetings/MeetingsContainer';
+import Navbar from '../navbar/navbarContainer';
 
 const Therapist = ({ user, therapist = {}, status, category }) => {
   const findAge = () => {
@@ -78,8 +79,11 @@ const Therapist = ({ user, therapist = {}, status, category }) => {
   };
 
   return (
-    <div className={styles.therapist}>
-      {status === 'loading' ? <Loader /> : renderTherapist()}
+    <div>
+      <Navbar />
+      <div className={styles.therapist}>
+        {status === 'loading' ? <Loader /> : renderTherapist()}
+      </div>
     </div>
   );
 };

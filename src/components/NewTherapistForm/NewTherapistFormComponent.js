@@ -4,6 +4,7 @@ import DatePicker from '../commons/DatePicker/DatePickerContainer';
 import { Redirect } from 'react-router-dom';
 import classnames from 'classnames';
 import UploadIcon from '../../assets/icons/UploadIcon.js';
+import Navbar from '../navbar/navbarContainer';
 
 const categories = [
   {
@@ -82,65 +83,72 @@ const NewTherapistForm = ({ createTherapist, redirect, errors, therapist }) => {
   };
 
   return (
-    <div className={styles.newTherapistForm}>
-      <h2 className={styles.title}>Become A Therapist</h2>
-      <div className={styles.formContainer}>
-        <form onSubmit={submitTherapist}>
-          <div>
-            <DatePicker setDate={setDateOfBirth} value={dateOfBirth} />
-            <p className={styles.warning}>
-              {errors.dateOfBirth && errors.dateOfBirth.message}
-            </p>
-          </div>
-          <div>
-            <input
-              onChange={(e) => setYearsExperience(e.target.value)}
-              value={yearsExperience}
-              placeholder="Years of experience"
-              className={classnames('', {
-                [styles.inputWarning]: errors.yearsExperience,
-              })}
-            />
-            <p className={styles.warning}>
-              {errors.yearsExperience && errors.yearsExperience.message}
-              {errors.yearsExperience &&
-                errors.yearsExperience.reason &&
-                `Years of experience must be a number`}
-            </p>
-          </div>
-          <label>Select categories:</label>
+    <div>
+      <Navbar />
+      <div className={styles.newTherapistForm}>
+        <h2 className={styles.title}>Become A Therapist</h2>
+        <div className={styles.formContainer}>
+          <form onSubmit={submitTherapist}>
+            <div>
+              <DatePicker
+                setDate={setDateOfBirth}
+                value={dateOfBirth}
+                error={errors.dateOfBirth}
+              />
+              <p className={styles.warning}>
+                {errors.dateOfBirth && errors.dateOfBirth.message}
+              </p>
+            </div>
+            <div>
+              <input
+                onChange={(e) => setYearsExperience(e.target.value)}
+                value={yearsExperience}
+                placeholder="Years of experience"
+                className={classnames('', {
+                  [styles.inputWarning]: errors.yearsExperience,
+                })}
+              />
+              <p className={styles.warning}>
+                {errors.yearsExperience && errors.yearsExperience.message}
+                {errors.yearsExperience &&
+                  errors.yearsExperience.reason &&
+                  `Years of experience must be a number`}
+              </p>
+            </div>
+            <label>Select categories:</label>
 
-          <div className={styles.categoryBtns}>
-            {renderCategoriesButtons()}
-            <p className={styles.warning}>
-              {errors.categories && errors.categories.message}
-            </p>
-          </div>
-          <div>
-            <input
-              onChange={(e) => setPricePerHour(e.target.value)}
-              value={pricePerHour}
-              placeholder="Price per hour"
-            />
-          </div>
+            <div className={styles.categoryBtns}>
+              {renderCategoriesButtons()}
+              <p className={styles.warning}>
+                {errors.categories && errors.categories.message}
+              </p>
+            </div>
+            <div>
+              <input
+                onChange={(e) => setPricePerHour(e.target.value)}
+                value={pricePerHour}
+                placeholder="Price per hour"
+              />
+            </div>
 
-          <div className={styles.photoUploadContainer}>
-            <button onClick={handleUpload} className={styles.uploadBtn}>
-              <UploadIcon fill="#37371f" className={styles.uploadIcon} />
-              Upload Photo
-            </button>
-            <input
-              onChange={(e) => setPhoto(e.target.files[0])}
-              type="file"
-              className={styles.photoUpload}
-              ref={hiddenFileInput}
-            />
-            {photo && <p>Photo uploaded!</p>}
-          </div>
-          <button className={styles.submitBtn}>Submit</button>
-        </form>
+            <div className={styles.photoUploadContainer}>
+              <button onClick={handleUpload} className={styles.uploadBtn}>
+                <UploadIcon fill="#37371f" className={styles.uploadIcon} />
+                Upload Photo
+              </button>
+              <input
+                onChange={(e) => setPhoto(e.target.files[0])}
+                type="file"
+                className={styles.photoUpload}
+                ref={hiddenFileInput}
+              />
+              {photo && <p>Photo uploaded!</p>}
+            </div>
+            <button className={styles.submitBtn}>Submit</button>
+          </form>
+        </div>
+        {renderRedirect()}
       </div>
-      {renderRedirect()}
     </div>
   );
 };

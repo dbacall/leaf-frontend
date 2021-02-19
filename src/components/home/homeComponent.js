@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './home.module.scss';
 import { Link } from 'react-router-dom';
+import Navbar from '../navbar/navbarContainer';
 
 const categories = [
   {
@@ -36,9 +37,12 @@ const Home = () => {
   };
 
   return (
-    <div className={styles.home}>
-      <h2 className={styles.title}>Categories</h2>
-      <div className={styles.categories}>{renderCategories()}</div>
+    <div>
+      <Navbar />
+      <div className={styles.home}>
+        <h2 className={styles.title}>Categories</h2>
+        <div className={styles.categories}>{renderCategories()}</div>
+      </div>
     </div>
   );
 };

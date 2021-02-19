@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import styles from './navbar-styles.module.scss';
 import { ReactComponent as CloseMenu } from '../../assets/icons/x-mark.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg';
@@ -9,6 +9,7 @@ import UserIcon from '../../assets/icons/UserIcon';
 
 const Navbar = ({ auth, logout }) => {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [redirect, setRedirect] = useState(false);
 
   const openMenu = () => {
     setMobileMenu(true);
@@ -22,6 +23,7 @@ const Navbar = ({ auth, logout }) => {
     e.preventDefault();
     logout();
     closeMenu();
+    setRedirect(true);
   };
 
   const iconColor = '#44a1a0';
@@ -98,6 +100,7 @@ const Navbar = ({ auth, logout }) => {
           )}
         </div>
       </nav>
+      {redirect && <Redirect to={`/login`} />}
     </section>
   );
 };
