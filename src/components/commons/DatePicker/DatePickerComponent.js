@@ -1,41 +1,28 @@
 import React from 'react';
-import {
-  KeyboardDateTimePicker,
-  KeyboardDatePicker,
-} from '@material-ui/pickers';
+import ReactDatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import styles from './DatePicker.module.scss';
+import classnames from 'classnames';
 
-const DatePicker = ({ setDate, dateAndTime, value }) => {
-  const today = new Date();
-
+const DatePicker = ({ setDate, dateAndTime, value, error }) => {
   return (
     <div className={styles.datePickerContainer}>
-      {dateAndTime ? (
-        <KeyboardDateTimePicker
-          className={styles.datePicker}
-          minDate={today}
-          minDateMessage="Please select a future date"
-          autoOk
-          variant="inline"
-          label="Date and Time"
-          format="MM/dd/yyyy HH:mm"
-          value={value}
-          // InputAdornmentProps={{ position: 'start' }}
-          onChange={(dateAndTime) => setDate(dateAndTime)}
-          ampm={false}
-        />
-      ) : (
-        <KeyboardDatePicker
-          className={styles.datePicker}
-          autoOk
-          variant="inline"
-          label="Date Of Birth (mm/dd/yyyy)"
-          format="MM/dd/yyyy"
-          value={value}
-          // InputAdornmentProps={{ position: 'start' }}
-          onChange={(date) => setDate(date)}
-        />
-      )}
+      <ReactDatePicker
+        selected={value}
+        onChange={(date) => setDate(date)}
+        showTimeSelect={dateAndTime}
+        timeIntervals={15}
+        dateFormat={dateAndTime ? 'dd/MM/yyyy hh:mm aa' : 'dd/MM/yyyy'}
+        wrapperClassName={styles.datePicker}
+        className={classnames('', {
+          [styles.inputWarning]: error,
+        })}
+        showYearDropdown
+        dropdownMode="select"
+        showMonthDropdown
+        placeholderText={dateAndTime ? 'Date and time' : 'Date of birth'}
+        minDate={dateAndTime && new Date()}
+      />
     </div>
   );
 };
