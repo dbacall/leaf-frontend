@@ -42,7 +42,8 @@
     "test": "react-app-rewired test",
     "test:snapshot": "jest --updateSnapshot",
     "test:coverage": "npm test -- --coverage",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "deploy": "aws s3 sync build/ s3://leaf-therapy-frontend --acl public-read"
   },
   "eslintConfig": {
     "extends": "react-app"
