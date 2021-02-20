@@ -62,19 +62,19 @@ div.therapist {
     }
   }
 
+  // @include media-mobile() {
+  //   padding: $padding;
+
+  //   .therapistProfile {
+  //     .imageContainer {
+  //       .therapistImage {
+  //         width: 200px;
+  //       }
+  //     }
+  //   }
+  // }
+
   @include media-mobile() {
-    padding: $padding;
-
-    .therapistProfile {
-      .imageContainer {
-        .therapistImage {
-          width: 200px;
-        }
-      }
-    }
-  }
-
-  @include media-mobile-xs() {
     padding: $padding / 2;
 
     .therapistProfile {
