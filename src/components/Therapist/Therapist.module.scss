@@ -1,6 +1,10 @@
 div.therapist {
   padding: $padding * 2;
 
+  .nameMobile {
+    display: none;
+  }
+
   .therapistProfile {
     display: flex;
     flex-direction: row;
@@ -26,7 +30,7 @@ div.therapist {
       width: 60%;
       margin: $margin auto;
 
-      .title {
+      .nameDesktop {
         text-align: center;
       }
 
@@ -47,8 +51,22 @@ div.therapist {
   }
 
   @include media-tablet() {
+    .nameMobile {
+      display: block;
+      text-align: center;
+      margin-top: $margin / 2;
+    }
+
     .therapistProfile {
       flex-direction: column;
+
+      > div:not(:first-child) {
+        padding: 0;
+      }
+
+      > div:first-child {
+        padding: 0 $padding;
+      }
 
       .imageContainer {
         .therapistImage {
@@ -57,7 +75,12 @@ div.therapist {
       }
 
       .therapistDetails {
+        margin: 0;
         width: 100%;
+
+        .nameDesktop {
+          display: none;
+        }
       }
     }
   }

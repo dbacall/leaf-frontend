@@ -16,6 +16,9 @@ const Therapist = ({ user, therapist = {}, status, category }) => {
     if (Object.keys(therapist).length > 0) {
       return (
         <div>
+          <h2 className={styles.nameMobile}>
+            {therapist.user[0].firstName} {therapist.user[0].surname}
+          </h2>
           <div className={styles.therapistProfile}>
             {therapist.photo.length > 0 ? (
               <div>
@@ -30,7 +33,7 @@ const Therapist = ({ user, therapist = {}, status, category }) => {
             ) : null}
             <div>
               <div className={styles.therapistDetails}>
-                <h2 className={styles.title}>
+                <h2 className={styles.nameDesktop}>
                   {therapist.user[0].firstName} {therapist.user[0].surname}
                 </h2>
                 <div className={styles.detailsList}>

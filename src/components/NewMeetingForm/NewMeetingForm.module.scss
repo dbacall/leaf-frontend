@@ -3,13 +3,12 @@ div.newMeetingForm {
 
   .title {
     text-align: center;
-    margin-bottom: $margin;
+    margin-bottom: -$margin;
   }
 
   .formContainer {
     width: 40%;
     margin: auto;
-    margin-top: $margin * 2;
     text-align: center;
 
     form {
@@ -46,6 +45,8 @@ div.newMeetingForm {
 
 @include media-mobile() {
   div.newMeetingForm {
+    padding: $padding;
+
     .formContainer {
       width: 95%;
     }
