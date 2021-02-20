@@ -42,17 +42,19 @@ const Meetings = ({ meetings, status }) => {
       {status === 'loading' ? (
         <Loader />
       ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Date & Time</th>
-              <th>Category</th>
-              <th>Length</th>
-              <th>Meeting Link</th>
-            </tr>
-          </thead>
-          <tbody>{renderMeetingRows()}</tbody>
-        </table>
+        <div className={styles.tableContainer}>
+          <table>
+            <thead>
+              <tr>
+                <th>Date & Time</th>
+                <th>Category</th>
+                <th>Length</th>
+                <th>Meeting Link</th>
+              </tr>
+            </thead>
+            <tbody>{renderMeetingRows()}</tbody>
+          </table>
+        </div>
       )}
     </div>
   );
