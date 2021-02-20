@@ -58,21 +58,21 @@ div.home {
     }
   }
 
+  // @include media-mobile() {
+  //   .categories {
+  //     grid-template-columns: 70%;
+  //     grid-auto-rows: 60vw;
+  //     justify-content: center;
+
+  //     .category {
+  //       .imageContainer {
+  //         height: 40vw;
+  //       }
+  //     }
+  //   }
+  // }
+
   @include media-mobile() {
-    .categories {
-      grid-template-columns: 70%;
-      grid-auto-rows: 60vw;
-      justify-content: center;
-
-      .category {
-        .imageContainer {
-          height: 40vw;
-        }
-      }
-    }
-  }
-
-  @include media-mobile-xs() {
     padding: $padding;
 
     .categories {

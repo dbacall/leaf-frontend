@@ -58,24 +58,24 @@ div.category {
     }
   }
 
+  // @include media-mobile() {
+  //   // padding: $padding;
+
+  //   .therapists {
+  //     grid-template-columns: 70%;
+  //     grid-auto-rows: 60vw;
+  //     justify-content: center;
+
+  //     .therapist {
+  //       // margin: auto;
+  //       .imageContainer {
+  //         height: 40vw;
+  //       }
+  //     }
+  //   }
+  // }
+
   @include media-mobile() {
-    // padding: $padding;
-
-    .therapists {
-      grid-template-columns: 70%;
-      grid-auto-rows: 60vw;
-      justify-content: center;
-
-      .therapist {
-        // margin: auto;
-        .imageContainer {
-          height: 40vw;
-        }
-      }
-    }
-  }
-
-  @include media-mobile-xs() {
     padding: $padding;
 
     .therapists {
