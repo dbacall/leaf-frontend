@@ -40,7 +40,7 @@ const Navbar = ({ auth, logout }) => {
         >
           {user.therapistId ? (
             <Link
-              to={`/therapist/${user.therapistId}`}
+              to={`/therapist-home/${user.therapistId}`}
               className={styles.navButton}
               onClick={closeMenu}
             >
@@ -58,10 +58,10 @@ const Navbar = ({ auth, logout }) => {
             </Link>
           )}
 
-          <Link className={styles.navButton} onClick={onLogoutClick}>
+          <a className={styles.navButton} onClick={onLogoutClick} href="fasd">
             <AuthIcon className={styles.navIcon} fill={iconColor} />
             Logout
-          </Link>
+          </a>
         </div>
       );
     } else {

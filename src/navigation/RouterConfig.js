@@ -15,9 +15,7 @@ const RouterConfig = () => {
                   exact
                   path={path}
                   key={key}
-                  render={(props) => {
-                    return <Component {...props} />;
-                  }}
+                  component={Component}
                 />
               );
             } else {
@@ -27,7 +25,32 @@ const RouterConfig = () => {
                   path={path}
                   key={key}
                   render={(props) => {
-                    return <Component {...props} />;
+                    console.log(props.match);
+                    const crumbs = routes
+                      // Get all routes that contain the current one.
+                      .filter(({ path }) => props.match.path.includes(path))
+                      // Swap out any dynamic routes with their param values.
+                      // E.g. "/pizza/:pizzaId" will become "/pizza/1"
+                      .map(({ path, ...rest }) => ({
+                        path: Object.keys(props.match.params).length
+                          ? Object.keys(props.match.params).reduce(
+                              (path, param) =>
+                                path.replace(
+                                  `:${param}`,
+                                  props.match.params[param]
+                                ),
+                              path
+                            )
+                          : path,
+                        ...rest,
+                      }));
+                    console.log(`Generated crumbs for ${props.match.path}`);
+                    crumbs.map(({ name, path }) => console.log({ name, path }));
+                    return (
+                      <div>
+                        <Component {...props} />
+                      </div>
+                    );
                   }}
                 />
               );

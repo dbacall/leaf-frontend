@@ -28,13 +28,13 @@ const routes = [
     privateRoute: false,
   },
   {
-    path: '/therapist/:id',
-    name: 'Therapist',
+    path: '/therapist-home/:id',
+    name: 'Therapist Home',
     Component: Therapist,
     privateRoute: false,
   },
   {
-    path: '/therapist/:id/:category',
+    path: '/category/:category/therapist/:id',
     name: 'Therapist',
     Component: Therapist,
     privateRoute: false,

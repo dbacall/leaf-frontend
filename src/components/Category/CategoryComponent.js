@@ -12,7 +12,7 @@ const Category = ({ therapists = [], status, category }) => {
       return therapists.map((therapist, index) => {
         return (
           <Link
-            to={`/therapist/${therapist.id}/${category}`}
+            to={`/category/${category}/therapist/${therapist.id}`}
             className={styles.therapist}
             key={index}
           >
