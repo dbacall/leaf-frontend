@@ -1,5 +1,5 @@
 div.therapist {
-  padding: $padding * 2;
+  padding: 0 $padding * 2;
 
   .nameMobile {
     display: none;
@@ -98,7 +98,7 @@ div.therapist {
   // }
 
   @include media-mobile() {
-    padding: $padding / 2;
+    padding: 0 $padding / 2;
 
     .therapistProfile {
       .imageContainer {

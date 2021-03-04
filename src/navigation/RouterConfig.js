@@ -32,7 +32,6 @@ const RouterConfig = () => {
                       // Get all routes that contain the current one.
                       .filter(({ path }) => props.match.path.includes(path))
                       // Swap out any dynamic routes with their param values.
-                      // E.g. "/pizza/:pizzaId" will become "/pizza/1"
                       .map(({ path, ...rest }) => ({
                         path: Object.keys(props.match.params).length
                           ? Object.keys(props.match.params).reduce(
@@ -46,13 +45,14 @@ const RouterConfig = () => {
                           : path,
                         ...rest,
                       }));
-                    console.log(`Generated crumbs for ${props.match.path}`);
-                    crumbs.map(({ name, path }) => console.log({ name, path }));
+
                     return (
                       <div>
                         <Navbar />
+                        {/* <div style={{ position: 'relative' }}> */}
                         <Breadcrumbs crumbs={crumbs} />
                         <Component {...props} />
+                        {/* </div> */}
                       </div>
                     );
                   }}

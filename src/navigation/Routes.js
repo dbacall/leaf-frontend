@@ -7,6 +7,7 @@ import Therapist from '../components/Therapist/TherapistContainer';
 import NewMeetingForm from '../components/NewMeetingForm/NewMeetingFormContainer';
 
 const routes = [
+  { path: '/', name: 'Home', Component: Home, privateRoute: false },
   {
     path: '/register',
     name: 'Register',
@@ -14,7 +15,6 @@ const routes = [
     privateRoute: false,
   },
   { path: '/login', name: 'Login', Component: Login, privateRoute: false },
-  { path: '/', name: 'Home', Component: Home, privateRoute: false },
   {
     path: '/therapist-form',
     name: 'Become Therapist',

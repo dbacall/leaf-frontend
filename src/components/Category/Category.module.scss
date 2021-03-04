@@ -1,5 +1,6 @@
 div.category {
-  padding: $padding * 2;
+  padding: 0 $padding * 2;
+
   .title {
     text-align: center;
     margin-bottom: $margin;
@@ -76,7 +77,7 @@ div.category {
   // }
 
   @include media-mobile() {
-    padding: $padding;
+    padding: $padding / 2 $padding;
 
     .therapists {
       grid-template-columns: 1fr;

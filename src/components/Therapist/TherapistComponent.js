@@ -81,10 +81,8 @@ const Therapist = ({ user, therapist = {}, status, category }) => {
   };
 
   return (
-    <div>
-      <div className={styles.therapist}>
-        {status === 'loading' ? <Loader /> : renderTherapist()}
-      </div>
+    <div className={styles.therapist}>
+      {status === 'loading' ? <Loader /> : renderTherapist()}
     </div>
   );
 };

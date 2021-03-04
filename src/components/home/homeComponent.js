@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './home.module.scss';
 import { Link } from 'react-router-dom';
-import Navbar from '../navbar/navbarContainer';
 
 const categories = [
   {

@@ -1,0 +1,10 @@
+div.breadcrumbs {
+  // position: absolute;
+  // top: $margin / 4;
+  // left: $margin / 4;
+  margin: $margin / 4 0 0 $margin / 4;
+
+  .rightChevronIcon {
+    margin: 0 $margin / 4;
+  }
+}
