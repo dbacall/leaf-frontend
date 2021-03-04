@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import styles from './register.module.scss';
-import Navbar from '../navbar/navbarContainer';
 
 const Register = ({ errors, registerUser }) => {
   const [firstName, setFirstName] = useState('');
@@ -27,7 +26,6 @@ const Register = ({ errors, registerUser }) => {
 
   return (
     <div>
-      <Navbar />
       <section className={styles.register}>
         <div className={styles.formContainer}>
           <div>

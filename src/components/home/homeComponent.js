@@ -38,7 +38,6 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
       <div className={styles.home}>
         <h2 className={styles.title}>Categories</h2>
         <div className={styles.categories}>{renderCategories()}</div>

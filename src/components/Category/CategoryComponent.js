@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Category.module.scss';
 import { Link } from 'react-router-dom';
 import Loader from '../commons/Loader';
-import Navbar from '../navbar/navbarContainer';
 
 const Category = ({ therapists = [], status, category }) => {
   const renderTherapists = () => {
@@ -38,7 +37,6 @@ const Category = ({ therapists = [], status, category }) => {
 
   return (
     <div>
-      <Navbar />
       <div className={styles.category}>
         <h2 className={styles.title}>Therapists</h2>
         <div className={styles.therapists}>{renderTherapists()}</div>

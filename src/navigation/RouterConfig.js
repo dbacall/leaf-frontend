@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import routes from './Routes';
+import Navbar from '../components/navbar/navbarContainer';
 
 const RouterConfig = () => {
   return (
@@ -48,6 +49,7 @@ const RouterConfig = () => {
                     crumbs.map(({ name, path }) => console.log({ name, path }));
                     return (
                       <div>
+                        <Navbar />
                         <Component {...props} />
                       </div>
                     );

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import styles from './login.module.scss';
-import Navbar from '../navbar/navbarContainer';
 
 const Login = ({ errors, loginUser }) => {
   const [email, setEmail] = useState('');
@@ -20,7 +19,6 @@ const Login = ({ errors, loginUser }) => {
 
   return (
     <div>
-      <Navbar />
       <section className={styles.login}>
         <div className={styles.formContainer}>
           <div>
