@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import routes from './Routes';
 import Navbar from '../components/navbar/navbarContainer';
+import Breadcrumbs from '../components/commons/Breadcrumbs/BreadcrumbsComponent';
 
 const RouterConfig = () => {
   return (
@@ -50,6 +51,7 @@ const RouterConfig = () => {
                     return (
                       <div>
                         <Navbar />
+                        <Breadcrumbs crumbs={crumbs} />
                         <Component {...props} />
                       </div>
                     );
