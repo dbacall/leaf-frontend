@@ -7,38 +7,43 @@ import Therapist from '../components/Therapist/TherapistContainer';
 import NewMeetingForm from '../components/NewMeetingForm/NewMeetingFormContainer';
 
 const routes = [
-  { path: '/register', name: 'Register', Component: Register, private: false },
-  { path: '/login', name: 'Login', Component: Login, private: false },
-  { path: '/', name: 'Home', Component: Home, private: false },
+  {
+    path: '/register',
+    name: 'Register',
+    Component: Register,
+    privateRoute: false,
+  },
+  { path: '/login', name: 'Login', Component: Login, privateRoute: false },
+  { path: '/', name: 'Home', Component: Home, privateRoute: false },
   {
     path: '/therapist-form',
     name: 'Become Therapist',
     Component: NewTherapistForm,
-    private: true,
+    privateRoute: true,
   },
   {
     path: '/category/:category',
     name: 'Category',
     Component: Category,
-    private: false,
+    privateRoute: false,
   },
   {
     path: '/therapist/:id',
     name: 'Therapist',
     Component: Therapist,
-    private: false,
+    privateRoute: false,
   },
   {
     path: '/therapist/:id/:category',
     name: 'Therapist',
     Component: Therapist,
-    private: false,
+    privateRoute: false,
   },
   {
     path: '/meeting-form',
     name: 'New Meeting',
     Component: NewMeetingForm,
-    private: true,
+    privateRoute: true,
   },
 ];
 
