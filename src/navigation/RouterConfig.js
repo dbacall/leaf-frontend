@@ -4,6 +4,7 @@ import PrivateRoute from './PrivateRoute';
 import routes from './Routes';
 import Navbar from '../components/navbar/navbarContainer';
 import Breadcrumbs from '../components/commons/Breadcrumbs/BreadcrumbsComponent';
+import getCrumbs from './GetCrumbs';
 
 const RouterConfig = () => {
   return (
@@ -12,6 +13,7 @@ const RouterConfig = () => {
         <Switch>
           {routes.map(({ path, Component, privateRoute }, key) => {
             if (privateRoute) {
+              console.log('here');
               return (
                 <PrivateRoute
                   exact
@@ -27,24 +29,7 @@ const RouterConfig = () => {
                   path={path}
                   key={key}
                   render={(props) => {
-                    console.log(props.match);
-                    const crumbs = routes
-                      // Get all routes that contain the current one.
-                      .filter(({ path }) => props.match.path.includes(path))
-                      // Swap out any dynamic routes with their param values.
-                      .map(({ path, ...rest }) => ({
-                        path: Object.keys(props.match.params).length
-                          ? Object.keys(props.match.params).reduce(
-                              (path, param) =>
-                                path.replace(
-                                  `:${param}`,
-                                  props.match.params[param]
-                                ),
-                              path
-                            )
-                          : path,
-                        ...rest,
-                      }));
+                    const crumbs = getCrumbs(props, routes);
 
                     return (
                       <div>

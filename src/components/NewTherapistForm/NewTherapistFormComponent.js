@@ -4,7 +4,6 @@ import DatePicker from '../commons/DatePicker/DatePickerContainer';
 import { Redirect } from 'react-router-dom';
 import classnames from 'classnames';
 import UploadIcon from '../../assets/icons/UploadIcon.js';
-import Navbar from '../navbar/navbarContainer';
 
 const categories = [
   {
@@ -84,7 +83,6 @@ const NewTherapistForm = ({ createTherapist, redirect, errors, therapist }) => {
 
   return (
     <div>
-      <Navbar />
       <div className={styles.newTherapistForm}>
         <h2 className={styles.title}>Become A Therapist</h2>
         <div className={styles.formContainer}>

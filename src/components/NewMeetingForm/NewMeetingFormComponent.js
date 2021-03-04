@@ -3,7 +3,6 @@ import styles from './NewMeetingForm.module.scss';
 import DatePicker from '../commons/DatePicker/DatePickerContainer';
 import { Redirect } from 'react-router-dom';
 import classnames from 'classnames';
-import Navbar from '../navbar/navbarContainer';
 
 const NewMeetingForm = ({ createMeeting, redirect, therapist, errors }) => {
   const [time, setTime] = useState('');
@@ -42,7 +41,6 @@ const NewMeetingForm = ({ createMeeting, redirect, therapist, errors }) => {
 
   return (
     <div>
-      <Navbar />
       <div className={styles.newMeetingForm}>
         <h2 className={styles.title}>Add A Meeting</h2>
         <div className={styles.formContainer}>

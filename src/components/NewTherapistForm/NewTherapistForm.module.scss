@@ -1,5 +1,5 @@
 div.newTherapistForm {
-  padding: $padding * 2;
+  padding: $padding $padding * 2;
 
   .title {
     text-align: center;
@@ -80,7 +80,7 @@ div.newTherapistForm {
 
 @include media-mobile() {
   div.newTherapistForm {
-    padding: $padding;
+    padding: $padding / 2 $padding;
 
     .formContainer {
       width: 95%;

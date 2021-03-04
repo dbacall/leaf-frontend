@@ -1,5 +1,5 @@
 div.newMeetingForm {
-  padding: $padding * 2;
+  padding: $padding $padding * 2;
 
   .title {
     text-align: center;
@@ -45,7 +45,7 @@ div.newMeetingForm {
 
 @include media-mobile() {
   div.newMeetingForm {
-    padding: $padding;
+    padding: $padding / 2 $padding;
 
     .formContainer {
       width: 95%;
